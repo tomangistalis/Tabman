@@ -108,9 +108,11 @@ open class TMTabItemBarButton: TMBarButton {
 
         // On iOS 13 the system dynamically adjusts tab bar item layouts based on orientation -
         // Tabman mimics this here.
+#if os(iOS)
         if #available(iOS 13, *) {
             makeComponentConstraints(for: UIDevice.current.orientation)
         }
+#endif
     }
 
     public required init?(coder aDecoder: NSCoder) {
@@ -152,6 +154,7 @@ open class TMTabItemBarButton: TMBarButton {
         adjustsAlphaOnSelection = false
     }
     
+#if os(iOS)
     open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         makeComponentConstraints(for: UIDevice.current.orientation)
@@ -160,7 +163,8 @@ open class TMTabItemBarButton: TMBarButton {
             update(for: selectionState)
         }
     }
-    
+#endif
+
     open override func layoutBadge(_ badge: TMBadgeView, in view: UIView) {
         super.layoutBadge(badge, in: view)
         
@@ -217,8 +221,13 @@ open class TMTabItemBarButton: TMBarButton {
         // If landscape or we are a `.regular` size class
         // Translates to:  Landscape || iPad
         // Tab views will be aligned horizontally.
-        if orientation.isLandscape || traitCollection.horizontalSizeClass == .regular {
-            
+        #if os(iOS)
+        let isLandscape = orientation.isLandscape
+        #else
+        let isLandscape = false
+        #endif
+        if isLandscape || traitCollection.horizontalSizeClass == .regular {
+
             let imagePadding = traitCollection.horizontalSizeClass == .compact ? Defaults.imagePadding / 2 : Defaults.imagePadding
             let labelPadding = Defaults.labelPadding
             

@@ -82,7 +82,9 @@ internal class AnimateableLabel: UIView {
     private func commonInit() {
         
         textLayer.truncationMode = .end
+#if os(iOS)
         textLayer.contentsScale = UIScreen.main.scale
+#endif
         layer.addSublayer(textLayer)
     }
     
