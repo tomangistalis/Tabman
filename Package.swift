@@ -5,7 +5,8 @@ import PackageDescription
 let package = Package(
     name: "Tabman",
     platforms: [
-        .iOS(.v12)
+        .iOS(.v12),
+        .tvOS(.v13)
     ],
     products: [
         .library(

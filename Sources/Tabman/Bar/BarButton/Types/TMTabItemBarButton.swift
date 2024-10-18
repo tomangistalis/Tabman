@@ -209,7 +209,7 @@ open class TMTabItemBarButton: TMBarButton {
     }
     
     // MARK: Layout
-    
+#if os(iOS)
     private func makeComponentConstraints(for orientation: UIDeviceOrientation) {
         guard let parent = container.superview else {
             return
@@ -247,7 +247,8 @@ open class TMTabItemBarButton: TMBarButton {
         componentConstraints = constraints
         NSLayoutConstraint.activate(constraints)
     }
-    
+#endif
+
     private func makeHorizontalAlignedConstraints(in parent: UIView,
                                                   imagePadding: CGFloat,
                                                   labelPadding: CGFloat) -> [NSLayoutConstraint] {
