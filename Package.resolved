@@ -1,5 +1,4 @@
 {
-  "originHash" : "a758ccf717fdfdb86f09136097e776d790bde8518689cbfe41619ea2215ecb20",
   "pins" : [
     {
       "identity" : "pageboy",
@@ -11,5 +10,5 @@
       }
     }
   ],
-  "version" : 3
+  "version" : 2
 }

@@ -171,6 +171,7 @@
 		D62AC0C21E5733810020B8AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D62AC0F41E5733FE0020B8AE /* TabmanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanViewController.swift; sourceTree = "<group>"; };
 		D65F101C1EAEA2730090980C /* Pageboy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pageboy.framework; path = ../Carthage/Build/iOS/Pageboy.framework; sourceTree = "<group>"; };
+		E8529AE72BC1384200C96B7B /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -471,6 +472,7 @@
 			isa = PBXGroup;
 			children = (
 				D62AC0B51E5733810020B8AE /* Tabman.h */,
+				E8529AE72BC1384200C96B7B /* PrivacyInfo.xcprivacy */,
 				D62AC0F41E5733FE0020B8AE /* TabmanViewController.swift */,
 				464264DE217E12A20001C4AF /* TabmanViewController+Insets.swift */,
 				46B7FDF920BC52D000E9BB7E /* Bar */,
@@ -561,8 +563,9 @@
 		D62AC0A91E5733810020B8AE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1530;
 				ORGANIZATIONNAME = "UI At Six";
 				TargetAttributes = {
 					D62AC0B11E5733810020B8AE = {
@@ -865,6 +868,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				ENABLE_MODULE_VERIFIER = YES;
 				INFOPLIST_FILE = Tabman/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = "$(TM_IOS_DEPLOYMENT_TARGET)";
@@ -874,6 +878,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = "$(TM_VERSION)";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				PRODUCT_BUNDLE_IDENTIFIER = com.uias.Tabman;
 				PRODUCT_NAME = Tabman;
 				SKIP_INSTALL = YES;
@@ -894,6 +899,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				ENABLE_MODULE_VERIFIER = YES;
 				INFOPLIST_FILE = Tabman/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = "$(TM_IOS_DEPLOYMENT_TARGET)";
@@ -903,6 +909,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = "$(TM_VERSION)";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				PRODUCT_BUNDLE_IDENTIFIER = com.uias.Tabman;
 				PRODUCT_NAME = Tabman;
 				SKIP_INSTALL = YES;
@@ -990,7 +997,7 @@
 			repositoryURL = "https://github.com/uias/Pageboy";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
+				minimumVersion = 4.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
